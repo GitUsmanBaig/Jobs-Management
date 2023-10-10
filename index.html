@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <img src="./images/bg-header-desktop.svg" alt="logo">
+    </nav>
+
+    <div id="filters"></div>
+    <div id="job-listings"></div>
+
+    <button id="addBtn"><span class="material-symbols-outlined">add</span></button>
+
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <img id="modalJobLogo" src="" alt="Job Logo" class="modal-logo">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalJobDetails"></div>
+
+        </div>
+    </div>
+
+    <div id="addJobModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddJobModal()">&times;</span>
+
+            <h3>Add a New Job</h3>
+            <form id="addJobForm">
+                <input type="text" id="companyName" placeholder="Company Name" required><br>
+                <input type="text" id="jobPosition" placeholder="Position" required><br>
+                <input type="text" id="jobLocation" placeholder="Location" required><br>
+                <input type="text" id="jobContract" placeholder="Contract Type" required>
+                <input type="text" id="jobLogoUrl" placeholder="Image URL" required><br>
+
+                <br>
+
+                <label>Level:</label><br>
+                <input type="radio" name="level" value="Junior" id="levelJunior"><label>Junior</label><br>
+                <input type="radio" name="level" value="Midweigth" id="levelMid"><label>Midweigth</label><br>
+                <input type="radio" name="level" value="Senior" id="levelSenior"><label>Senior</label><br>
+                <br>
+
+                <div id="languages-checkbox">
+                    <label>Languages:</label>
+                    <input type="checkbox" name="languages" value="JavaScript" id="lang"><label>JavaScript</label>
+                    <input type="checkbox" name="languages" value="Python" id="lang"><label>Python</label>
+                    <input type="checkbox" name="languages" value="CSS" id="lang"><label>CSS</label>
+                    <input type="checkbox" name="languages" value="HTML" id="lang"><label>HTML</label>
+                    <br>
+                </div>
+
+                <div id="tool-checkbox">
+                    <label>Tools:</label>
+                    <input type="checkbox" name="tools" value="React" id="toolReact"><label>React</label>
+                    <input type="checkbox" name="tools" value="Docker" id="toolDocker"><label>Docker</label>
+                    <input type="checkbox" name="tools" value="Sass" id="toolSass"><label>Sass</label>
+                    <input type="checkbox" name="tools" value="Ruby" id="toolRuby"><label>Ruby</label>
+                    <br>
+                </div>
+                <br>
+
+                <label id="Add-Label">Featured:</label>
+                <input type="checkbox" id="isFeatured"><br>
+                <button type="submit">Add Job</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

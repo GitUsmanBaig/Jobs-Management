@@ -1,0 +1,415 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    background-color: hsl(180, 52%, 96%);
+    font-family: 'Fasthand', cursive;
+    font-family: 'League Spartan', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+
+nav {
+    background-color: hsl(180, 29%, 50%);
+    height: 100px;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    background-color: hsl(180, 52%, 96%);
+    padding: 20px;
+    padding-left: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 15px;
+    width: auto;
+    width: 65%;
+    background-color: #FFFFFF;
+    display: none;
+    position: relative;
+    top: -20px;
+}
+
+.filter-item {
+    display: inline-block;
+    padding: 5px 4px;
+    border-radius: 1px;
+    cursor: pointer;
+    background-color: hsl(180, 31%, 95%);
+    color: hsl(180, 29%, 50%);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.job-listing {
+    display: flex;
+
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.job-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.job-info {
+    flex-grow: 2;
+}
+
+.job-company {
+    margin-right: 10px;
+    color: hsl(180, 29%, 50%);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.job-new,
+.job-featured {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.job-new {
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+    font-size: 10px;
+}
+
+.job-featured {
+    background-color: hsl(180, 14%, 20%);
+    color: #fff;
+    font-size: 10px;
+}
+
+.job-details {
+    display: flex;
+    gap: 15px;
+    color: hsl(180, 8%, 52%);
+    font-size: 10px;
+}
+
+.job-tags {
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.tag {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: hsl(180, 52%, 96%);
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 12px;
+    color: hsl(180, 29%, 50%);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+}
+
+#job-listings {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.job-info>div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.job-title {
+    margin-top: 12px;
+    margin-bottom: 10px;
+    color: hsl(180, 14%, 20%);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.job-title:hover {
+    color: hsl(180, 29%, 50%);
+}
+
+.job-details {
+    display: flex;
+    gap: 15px;
+    color: hsl(180, 8%, 52%);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.filter-item span {
+    margin-left: 5px;
+    margin-right: 0;
+    padding: 5px;
+    cursor: pointer;
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+}
+
+.filter-item span:hover {
+    background-color: black
+}
+
+#addBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: hsl(180, 29%, 50%);
+    border: none;
+    cursor: pointer;
+    background-color: hsl(180, 52%, 96%);
+}
+
+#addBtn span {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#addBtn:hover {
+    color: hsl(180, 14%, 20%);
+}
+
+#clearAllFilters {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: hsl(180, 29%, 50%);
+    cursor: pointer;
+    margin-left: auto;
+    border: none;
+    background-color: white;
+}
+
+#clearAllFilters:hover {
+    text-decoration: underline;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.modal-logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: -60px auto 20px auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#addJobModal input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid hsl(180, 8%, 52%);
+}
+
+#addJobModal button {
+    padding: 10px 15px;
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    width: 100%;
+    justify-content: center;
+}
+
+#addJobModal button:hover {
+    background-color: hsl(180, 14%, 20%);
+}
+
+#languages-checkbox {
+    display: flex;
+    flex-direction: row;
+}
+
+#lang {
+    bottom: 20px;
+    right: 20px;
+    color: hsl(180, 29%, 50%);
+    border: none;
+    cursor: pointer;
+    background-color: hsl(180, 52%, 96%);
+}
+
+#languages-checkbox input[type="checkbox"],
+#tool-checkbox input[type="checkbox"] {
+    margin-left: 15px;
+}
+
+#Add-Label {
+    margin-right: 5px;
+    background-color: hsl(180, 28%, 19%);
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+#deleteJobBtn {
+    padding: 10px 15px;
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#deleteJobBtn:hover {
+    background-color: hsl(180, 14%, 20%);
+}
+
+
+#addBtn {
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+
+@media (max-width: 376px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        background-color: hsl(180, 52%, 96%);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    nav{
+        height: 60px;
+    }
+
+    .job-listing {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 10%;
+    }
+
+    .job-details {
+        display: flex;
+        gap: 15px;
+        color: hsl(180, 8%, 52%);
+        font-size: 11px;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    .job-info>div:first-child {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .job-logo {
+        margin-top: 15px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        margin: -40px auto 20px auto;
+        left: 20%;
+    }
+
+    .job-title {
+        margin: 5px 0;
+    }
+
+    .job-tags {
+        flex-wrap: wrap;
+        display: flex;
+        margin-bottom: 5px;
+        gap:0px;
+    }
+
+    .tag {
+        border-radius: 5px;
+        background-color: hsl(180, 31%, 95%);
+        color: hsl(180, 29%, 50%);
+    }
+
+    #addBtn {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    #languages-checkbox {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
